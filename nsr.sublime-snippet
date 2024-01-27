@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+vector<int> NSR(vector<int>& a){
+	int n=a.size();
+	vector<int> nsr(n);
+	stack<int> st;
+	for(int i=n-1;i>=0;i--){
+		if(st.empty()){
+			nsr[i]=-1;
+		}else{
+			while(!st.empty() and a[st.top()]>=a[i])st.pop();
+			nsr[i]=st.empty()?-1:st.top();
+		}
+		st.push(i);
+	}
+	return nsr;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>nsr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

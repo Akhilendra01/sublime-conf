@@ -1,0 +1,23 @@
+[
+	   {
+        "caption": "Terminal (panel)",
+        "command": "terminus_open",
+        "args"   : {
+           "cmd": "powershell",
+           "cwd": "${file_path:${folder}}",
+           "title": "powershell",
+           "panel_name": "Terminus"
+      }
+   },
+
+   {
+        "caption": "Terminal (panel)",
+        "command": "terminus_open",
+        "args"   : {
+           "cmd": "bash",
+           "cwd": "${file_path:${folder}}",
+           "title": "bash",
+           "panel_name": "Terminus"
+      }
+   },
+]

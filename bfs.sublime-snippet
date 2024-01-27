@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+vector<int> bfs(int src, vector<vector<int>>& gr){
+	int n{(int)gr.size()};
+	vector<int> d(n), vis(n);
+	queue<int>q;
+
+	vis[src]=1;
+	d[src]=0;
+	q.push(src);
+	
+	while(!q.empty()){
+		int node{q.front()};
+		q.pop();
+		for(int child: gr[node]){
+			if(!vis[child]){
+				vis[child]=1;
+				d[child]=1+d[node];
+				q.push(child);
+			}
+		}
+	}
+	
+	return d;
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bfs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

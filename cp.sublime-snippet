@@ -1,0 +1,53 @@
+<snippet>
+	<content><![CDATA[
+/*
+	ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् |
+	उर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात् ||
+*/
+
+#include <bits/stdc++.h>
+
+#define int 			long long int
+#define F  				first
+#define S  				second
+#define MOD 			1000000007
+#define endl 			"\n"
+#define pb				push_back
+#define double 			long double
+#define sz(a)			((int)a.size())
+#define print(a)		for(auto &x : a)cout<<x<<" "; cout<<endl
+#define print1(a)		for(auto &x : a)cout<<x.F<<" "<<x.S<<endl
+#define print2(a, x,y)	for(int i=x;i<y;i++)cout<<a[i]<<" "; cout<<endl
+
+using namespace std;
+
+
+void solve(){
+	$0
+}
+
+int32_t main()
+{	
+
+	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+
+	clock_t z=clock();
+	
+	int t=1;
+	// cin>>t;
+	while(t--)solve();
+
+	cerr<<"Run Time : "<<((double)(clock()-z)/CLOCKS_PER_SEC)<<endl;
+	return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

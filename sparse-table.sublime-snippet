@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+template<typename T>
+class SparseTable{
+private:
+	int n, m;
+	vector<vector<T>> st;
+	vector<int> pw;
+	function<T(T, T)> merge;
+public:
+	SparseTable(vector<T>& a, function<T(T, T)>f, T d){
+		n=a.size();
+		m=0;
+		while((1<<m)<n)m++;
+		merge=f; pw.resize(n+1);
+		st.resize(n, vector<T>(m, d));
+		for(int i{};i<n;i++)st[i][0]=a[i];
+		build();
+	}
+	void build(){
+		for(int i{2};i<=m;i++)pw[i]=pw[i/2]+1;
+		for(int j{1};j<m;j++){
+			for(int i{};i<n;i++){
+				st[i][j]=st[i][j-1];
+				if(i+(1<<(j-1))<n)st[i][j]=merge(st[i][j-1], st[i+(1<<(j-1))][j-1]);
+			}
+		}
+	}
+	T query(int l, int r){
+		if(l>r)swap(l, r);
+		r++;
+		int len{ pw[r-l] };
+		return merge(st[l][len], st[r-(1<<len)][len]);
+	}
+};
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sparsetable</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

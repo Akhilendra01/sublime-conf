@@ -1,0 +1,20 @@
+[
+	  {
+       "keys": ["alt+1"],
+       "command": "terminus_open",
+       "args" : {
+           "cmd": "powershell",
+           "cwd": "${file_path:${folder}}",
+           "panel_name": "Terminus"
+       }
+   },
+   {
+       "keys": ["alt+2"],
+       "command": "terminus_open",
+       "args" : {
+           "cmd": "bash",
+           "cwd": "${file_path:${folder}}",
+           "panel_name": "Terminus"
+       }
+   }
+]

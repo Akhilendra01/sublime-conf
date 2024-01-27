@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+		
+void update(int i, int v, vi& bit){ for(;i<bit.size();i+=(i&-i)) bit[i]+=v; }
+int query(int i, vi& bit){ int r{}; for(;i>0;i-=(i&-i))r+=bit[i]; return r; }
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fenwick</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+class Node{
+public:
+	Node* link[2];
+	int stop;
+	Node(){
+		fill(link, link+2, nullptr);
+		stop=-1;	
+	}
+
+	Node* get(int key){return link[key];}
+	bool containsKey(int key){return link[key]!=nullptr;}
+	void put(int key, Node* node){link[key]=node;}
+	void setStop(int i){stop=i;}
+	int getStop(){return stop;};
+};
+
+
+class Trie{
+public:
+	int k;
+	Node* root;
+	Trie(int kk){root=new Node(); k=kk;}
+
+	void insert(int num, int idx){
+		Node* it{root};
+		for(int i{k};i>=0;i--){
+			int b{(num>>i)&1};
+			if(!it->containsKey(b))it->put(b, new Node());
+			it=it->get(b);
+		}
+		it->setStop(idx);
+	}
+};
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>triebin</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

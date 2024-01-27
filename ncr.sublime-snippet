@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+int ncr(int n, int r){
+	int val=f[n];
+	val=(val*inv(f[r]))%mod;
+	val=(val*inv(f[n-r]))%mod;
+	return val;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ncr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

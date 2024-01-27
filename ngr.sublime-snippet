@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+vector<int> NGR(vector<int>& a){
+	int n=a.size();
+	vector<int> ngr(n);
+	stack<int> st;
+	for(int i=n-1;i>=0;i--){
+		if(st.empty()){
+			ngr[i]=-1;
+		}else{
+			while(!st.empty() and a[st.top()]<=a[i])st.pop();
+			ngr[i]=st.empty()?-1:st.top();
+		}
+		st.push(i);
+	}
+	return ngr;
+}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ngr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
